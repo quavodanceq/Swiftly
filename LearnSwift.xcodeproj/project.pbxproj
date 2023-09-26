@@ -17,6 +17,9 @@
 		649AA3432AC1DB6C00E543F0 /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3422AC1DB6C00E543F0 /* TopicModel.swift */; };
 		649AA3482AC1EC3700E543F0 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3472AC1EC3700E543F0 /* UserDefaultsManager.swift */; };
 		649AA34A2AC1ED1F00E543F0 /* TopicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3492AC1ED1F00E543F0 /* TopicsManager.swift */; };
+		649AA35E2AC2A64A00E543F0 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA35D2AC2A64A00E543F0 /* CodeViewController.swift */; };
+		649AA3622AC2B62000E543F0 /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = 649AA3612AC2B62000E543F0 /* Highlightr */; };
+		649AA3642AC2BCEB00E543F0 /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3632AC2BCEB00E543F0 /* TopicViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,8 @@
 		649AA3422AC1DB6C00E543F0 /* TopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		649AA3472AC1EC3700E543F0 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		649AA3492AC1ED1F00E543F0 /* TopicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsManager.swift; sourceTree = "<group>"; };
+		649AA35D2AC2A64A00E543F0 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		649AA3632AC2BCEB00E543F0 /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649AA3622AC2B62000E543F0 /* Highlightr in Frameworks */,
 				649AA3402AC1DA7A00E543F0 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				649AA32B2AC1D68200E543F0 /* ViewController.swift */,
+				649AA3632AC2BCEB00E543F0 /* TopicViewController.swift */,
+				649AA35D2AC2A64A00E543F0 /* CodeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 			name = LearnSwift;
 			packageProductDependencies = (
 				649AA33F2AC1DA7A00E543F0 /* SnapKit */,
+				649AA3612AC2B62000E543F0 /* Highlightr */,
 			);
 			productName = LearnSwift;
 			productReference = 649AA3242AC1D68200E543F0 /* LearnSwift.app */;
@@ -167,6 +176,7 @@
 			mainGroup = 649AA31B2AC1D68200E543F0;
 			packageReferences = (
 				649AA33E2AC1DA7A00E543F0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				649AA3602AC2B62000E543F0 /* XCRemoteSwiftPackageReference "Highlightr" */,
 			);
 			productRefGroup = 649AA3252AC1D68200E543F0 /* Products */;
 			projectDirPath = "";
@@ -199,8 +209,10 @@
 				649AA3482AC1EC3700E543F0 /* UserDefaultsManager.swift in Sources */,
 				649AA34A2AC1ED1F00E543F0 /* TopicsManager.swift in Sources */,
 				649AA33D2AC1D93C00E543F0 /* Cell.swift in Sources */,
+				649AA35E2AC2A64A00E543F0 /* CodeViewController.swift in Sources */,
 				649AA3282AC1D68200E543F0 /* AppDelegate.swift in Sources */,
 				649AA32A2AC1D68200E543F0 /* SceneDelegate.swift in Sources */,
+				649AA3642AC2BCEB00E543F0 /* TopicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -322,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -418,6 +430,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		649AA3602AC2B62000E543F0 /* XCRemoteSwiftPackageReference "Highlightr" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raspu/Highlightr.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -425,6 +445,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 649AA33E2AC1DA7A00E543F0 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		649AA3612AC2B62000E543F0 /* Highlightr */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 649AA3602AC2B62000E543F0 /* XCRemoteSwiftPackageReference "Highlightr" */;
+			productName = Highlightr;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
