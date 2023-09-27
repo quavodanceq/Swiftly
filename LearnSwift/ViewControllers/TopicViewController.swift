@@ -11,14 +11,14 @@ import SnapKit
 
 class TopicViewController: UIViewController {
     
+    private var topic: Topic?
+    
     private let textLabel = UITextView()
     
-    private let scrollView = UIScrollView()
-    
-    convenience init(title: String,text: String) {
+    convenience init(topic: Topic) {
         self.init()
-        textLabel.text = text
-        self.title = title
+        self.topic = topic
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -26,17 +26,32 @@ class TopicViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
-        
-        //scrollView.isScrollEnabled = true
+ 
         view.backgroundColor = .white
+        setupNavigaton()
         setupLabel()
         setupConstraints()
+    }
+    
+    private func setupNavigaton() {
+        title = topic!.name
+        let button = UIBarButtonItem(title: "Go to test", style: .plain, target: self, action: #selector(buttonTapped))
+        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .normal)
+        navigationController?.navigationBar.tintColor = .black  
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .normal)
+        navigationItem.rightBarButtonItem = button
+    }
+    
+    
+    
+    @objc private func buttonTapped() {
+        self.navigationController?.pushViewController(CodeViewController(code: topic!.practice), animated: true)
     }
     
     private func setupLabel() {
         
         view.addSubview(textLabel)
+        textLabel.text = topic!.text
         textLabel.textColor = .black
         textLabel.isEditable = false
         textLabel.isSelectable = false

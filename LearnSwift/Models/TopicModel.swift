@@ -21,6 +21,8 @@ struct Topic {
     
     let questions: [Question]
     
+    let practice: CodePractice
+    
 }
 
 struct Question {
@@ -36,5 +38,13 @@ struct Answer {
     let text: String
     
     let isCorrect: Bool
+    
+}
+
+struct CodePractice {
+    
+    let text: String
+    
+    let correctCode: String
     
 }

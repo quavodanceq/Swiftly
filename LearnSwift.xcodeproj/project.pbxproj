@@ -20,6 +20,9 @@
 		649AA35E2AC2A64A00E543F0 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA35D2AC2A64A00E543F0 /* CodeViewController.swift */; };
 		649AA3622AC2B62000E543F0 /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = 649AA3612AC2B62000E543F0 /* Highlightr */; };
 		649AA3642AC2BCEB00E543F0 /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3632AC2BCEB00E543F0 /* TopicViewController.swift */; };
+		649AA3662AC2DDDB00E543F0 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3652AC2DDDA00E543F0 /* QuestionViewController.swift */; };
+		649AA3682AC3245C00E543F0 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3672AC3245C00E543F0 /* QuestionView.swift */; };
+		649AA36B2AC44CBB00E543F0 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA36A2AC44CBB00E543F0 /* UIColor + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		649AA3492AC1ED1F00E543F0 /* TopicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsManager.swift; sourceTree = "<group>"; };
 		649AA35D2AC2A64A00E543F0 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		649AA3632AC2BCEB00E543F0 /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
+		649AA3652AC2DDDA00E543F0 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		649AA3672AC3245C00E543F0 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		649AA36A2AC44CBB00E543F0 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 				649AA3412AC1DB4000E543F0 /* Models */,
 				649AA33B2AC1D92900E543F0 /* Views */,
 				649AA3462AC1EC1D00E543F0 /* Managers */,
+				649AA3692AC44C9C00E543F0 /* Extensions */,
 				649AA3302AC1D68300E543F0 /* Assets.xcassets */,
 				649AA3322AC1D68300E543F0 /* LaunchScreen.storyboard */,
 				649AA3352AC1D68300E543F0 /* Info.plist */,
@@ -86,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				649AA33C2AC1D93C00E543F0 /* Cell.swift */,
+				649AA3672AC3245C00E543F0 /* QuestionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,6 +112,7 @@
 				649AA32B2AC1D68200E543F0 /* ViewController.swift */,
 				649AA3632AC2BCEB00E543F0 /* TopicViewController.swift */,
 				649AA35D2AC2A64A00E543F0 /* CodeViewController.swift */,
+				649AA3652AC2DDDA00E543F0 /* QuestionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,6 +133,14 @@
 				649AA3492AC1ED1F00E543F0 /* TopicsManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		649AA3692AC44C9C00E543F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				649AA36A2AC44CBB00E543F0 /* UIColor + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,13 +221,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649AA3662AC2DDDB00E543F0 /* QuestionViewController.swift in Sources */,
 				649AA3432AC1DB6C00E543F0 /* TopicModel.swift in Sources */,
 				649AA32C2AC1D68200E543F0 /* ViewController.swift in Sources */,
 				649AA3482AC1EC3700E543F0 /* UserDefaultsManager.swift in Sources */,
 				649AA34A2AC1ED1F00E543F0 /* TopicsManager.swift in Sources */,
 				649AA33D2AC1D93C00E543F0 /* Cell.swift in Sources */,
 				649AA35E2AC2A64A00E543F0 /* CodeViewController.swift in Sources */,
+				649AA3682AC3245C00E543F0 /* QuestionView.swift in Sources */,
 				649AA3282AC1D68200E543F0 /* AppDelegate.swift in Sources */,
+				649AA36B2AC44CBB00E543F0 /* UIColor + Extension.swift in Sources */,
 				649AA32A2AC1D68200E543F0 /* SceneDelegate.swift in Sources */,
 				649AA3642AC2BCEB00E543F0 /* TopicViewController.swift in Sources */,
 			);

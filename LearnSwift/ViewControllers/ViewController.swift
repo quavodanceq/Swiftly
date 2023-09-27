@@ -61,7 +61,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let topic = topics[indexPath.row]
-        let vc = TopicViewController(title: topic.name, text: topic.text)
+        let vc = TopicViewController(topic: topic)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -9,62 +9,97 @@ import UIKit
 import Highlightr
 import SnapKit
 
-class SyntaxHighlightViewController: UIViewController {
+class CodeViewController: UIViewController {
+    
+    private let finishButton = UIBarButtonItem(title: "Finish", style: .plain, target: self, action: #selector(finishButtonTapped))
+    
+    private var codeTask: CodePractice?
     
     private let taskLabel = UILabel()
     
-    private var correctCode: String = ""
-
     private let codeTextView = UITextView()
     
-    private let button = UIButton()
-    
-    convenience init(taskString: String, correctCode:String) {
+    convenience init(code: CodePractice) {
+        
         self.init()
-        self.taskLabel.text = taskString
-        self.correctCode = correctCode
+        self.codeTask = code
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Create a Highlightr instance
-        let highlightr = Highlightr()
-
-        // Set the theme (e.g., "xcode")
-        highlightr?.setTheme(to: "xcode")
-
-        // Swift code to highlight
-        let swiftCode = "print(123)"
-
-        codeTextView.attributedText = highlightr!.highlight(swiftCode, as: "swift")
-        view.addSubview(codeTextView)
-        setupButton()
+        view.backgroundColor = .white
+        setupTaskLabel()
+        setupTextView()
+        setupNavigation()
         setupConstraints()
+        print(codeTask!.correctCode)
     }
     
-    private func setupButton() {
+    private func setupNavigation() {
+        finishButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .normal)
+        finishButton.isEnabled = false
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .normal)
+        navigationItem.rightBarButtonItem = finishButton
+    }
+    
+    @objc private func finishButtonTapped() {
         
-        view.addSubview(button)
-        button.backgroundColor = .red
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        print(123)
     }
     
-    @objc private func buttonTapped() {
-        print(codeTextView.text)
+    private func setupTaskLabel() {
+        
+        view.addSubview(taskLabel)
+        taskLabel.text = codeTask!.text
+        taskLabel.font = UIFont(name: "Copperplate-Bold", size: 19)
+        taskLabel.textColor = .black
+        taskLabel.numberOfLines = 0
     }
+    
+    private func setupTextView() {
+        
+        view.addSubview(codeTextView)
+        codeTextView.backgroundColor = .codeEditorBackgroundColor
+        codeTextView.delegate = self
+        let highlightr = Highlightr()
+        highlightr?.setTheme(to: "xcode")
+        let swiftCode = "print(123)"
+        codeTextView.attributedText = highlightr!.highlight(swiftCode, as: "swift")
+        codeTextView.autocapitalizationType = .none
+        codeTextView.font = UIFont(name: "TamilSangamMN-Bold", size: 23)
+    }
+    
+    
     
     private func setupConstraints() {
-        codeTextView.snp.makeConstraints { make in
+        
+        taskLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        
+        codeTextView.snp.makeConstraints { make in
+            make.top.equalTo(taskLabel.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview()
         }
         
-        button.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-50)
-            make.centerX.equalToSuperview()
+       
+    }
+}
+
+extension CodeViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+        let highlightr = Highlightr()
+        highlightr?.setTheme(to: "xcode")
+        codeTextView.attributedText = highlightr!.highlight(textView.text, as: "swift")
+        codeTextView.font = UIFont(name: "TamilSangamMN-Bold", size: 23)
+        if textView.text == codeTask!.correctCode {
+            finishButton.isEnabled = true
         }
     }
 }
