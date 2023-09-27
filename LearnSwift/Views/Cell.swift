@@ -57,24 +57,24 @@ class Cell: UITableViewCell {
         addSubview(numberLabel)
         numberLabel.text = topic?.number
         numberLabel.textColor = .black
-        numberLabel.font = UIFont(name: "Georgia-Bold", size: 33)
+        numberLabel.font = UIFont(name: "Georgia-Bold", size: 40)
     }
     
     private func setupConstraints() {
         
         numberLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(20)
         }
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
-            make.leading.equalTo(numberLabel.snp.trailing).offset(10)
+            make.leading.equalTo(numberLabel.snp.trailing).offset(-10)
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(10)
-            make.leading.equalTo(numberLabel.snp.trailing).offset(10)
+            make.top.equalTo(nameLabel.snp.bottom).offset(5)
+            make.leading.equalTo(numberLabel.snp.trailing).offset(-10)
             make.trailing.equalToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-10)
         }
