@@ -15,7 +15,7 @@ class UDManager {
     
     private let userDefaults = UserDefaults.standard
     
-    func passed(topicNumber: Int) {
+    func passed(topicNumber: String) {
         
         userDefaults.set(true, forKey: "topic\(topicNumber)")
         

@@ -31,11 +31,20 @@ class TopicViewController: UIViewController {
         setupNavigaton()
         setupLabel()
         setupConstraints()
+        print(topic?.isPassed)
     }
     
     private func setupNavigaton() {
         title = topic!.name
-        let button = UIBarButtonItem(title: "Go to test", style: .plain, target: self, action: #selector(buttonTapped))
+        var buttonTitle: String
+        
+        if topic?.practice != nil {
+            buttonTitle = "Go to practice"
+        } else {
+            buttonTitle = "Finish"
+        }
+        
+        let button = UIBarButtonItem(title: buttonTitle, style: .plain, target: self, action: #selector(buttonTapped))
         button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .normal)
         navigationController?.navigationBar.tintColor = .black  
         navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .normal)
@@ -45,7 +54,15 @@ class TopicViewController: UIViewController {
     
     
     @objc private func buttonTapped() {
-        self.navigationController?.pushViewController(CodeViewController(code: topic!.practice), animated: true)
+        if topic?.practice != nil {
+            self.navigationController?.pushViewController(CodeViewController(topic: topic!), animated: true)
+        } else {
+            
+            UDManager.shared.passed(topicNumber: topic!.number)
+            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.parent?.viewDidLoad()
+        }
+        
     }
     
     private func setupLabel() {
@@ -56,7 +73,7 @@ class TopicViewController: UIViewController {
         textLabel.isEditable = false
         textLabel.isSelectable = false
         textLabel.showsVerticalScrollIndicator = false
-        textLabel.font = UIFont(name: "GillSans-SemiBold", size: 19)
+        textLabel.font = UIFont(name: "GillSans-SemiBold", size: 22)
     }
     
     private func setupConstraints() {

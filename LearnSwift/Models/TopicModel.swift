@@ -21,7 +21,7 @@ struct Topic {
     
     let questions: [Question]
     
-    let practice: CodePractice
+    let practice: CodePractice?
     
 }
 
@@ -44,6 +44,8 @@ struct Answer {
 struct CodePractice {
     
     let text: String
+    
+    let initialCode: String
     
     let correctCode: String
     
