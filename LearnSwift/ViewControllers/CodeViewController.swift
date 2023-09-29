@@ -45,22 +45,7 @@ class CodeViewController: UIViewController {
     @objc private func finishButtonTapped() {
         
         UDManager.shared.passed(topicNumber: topic!.number)
-        let snapShot = UIView()
-        if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-            let mainVC = UINavigationController(rootViewController: ViewController())
-            scene.window?.rootViewController = mainVC
-            UIView.transition(
-                with: scene.window!,
-                    duration: 0.5,
-                    options: .transitionCrossDissolve,
-                    animations: {
-                        snapShot.transform = CGAffineTransform(translationX: 0, y: snapShot.frame.height)
-                    },
-                    completion: { status in
-                        snapShot.removeFromSuperview()
-                    }
-                )
-        }
+        UIApplication.shared.popToMainVC()
     }
     
     private func setupTaskLabel() {

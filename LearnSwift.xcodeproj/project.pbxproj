@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64092B5C2AC72CDE00B2C2B5 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64092B5B2AC72CDE00B2C2B5 /* UIApplication + Extension.swift */; };
 		649AA3282AC1D68200E543F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3272AC1D68200E543F0 /* AppDelegate.swift */; };
 		649AA32A2AC1D68200E543F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA3292AC1D68200E543F0 /* SceneDelegate.swift */; };
 		649AA32C2AC1D68200E543F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649AA32B2AC1D68200E543F0 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64092B5B2AC72CDE00B2C2B5 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
 		649AA3242AC1D68200E543F0 /* LearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649AA3272AC1D68200E543F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		649AA3292AC1D68200E543F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				649AA36A2AC44CBB00E543F0 /* UIColor + Extension.swift */,
+				64092B5B2AC72CDE00B2C2B5 /* UIApplication + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				649AA32C2AC1D68200E543F0 /* ViewController.swift in Sources */,
 				649AA3482AC1EC3700E543F0 /* UserDefaultsManager.swift in Sources */,
 				649AA34A2AC1ED1F00E543F0 /* TopicsManager.swift in Sources */,
+				64092B5C2AC72CDE00B2C2B5 /* UIApplication + Extension.swift in Sources */,
 				649AA33D2AC1D93C00E543F0 /* Cell.swift in Sources */,
 				649AA35E2AC2A64A00E543F0 /* CodeViewController.swift in Sources */,
 				649AA3682AC3245C00E543F0 /* QuestionView.swift in Sources */,
